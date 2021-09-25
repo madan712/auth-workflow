@@ -14,15 +14,15 @@ export default function appReducer(state = initialState, action) {
             newState[action.key] = action.value;
             return newState;
         case constant.LOAD_USER:
-        	newState.user = action.user;
-        	newState.redirectToReferrer= true;
-        	return newState;
+            newState.user = action.user;
+            newState.redirectToReferrer = true;
+            return newState;
         case constant.LOGOUT:
-        	newState.userName = null;
-        	newState.password = null;
-        	newState.user = null;
-        	newState.redirectToReferrer= false;
-        	return newState;
+            newState.userName = null;
+            newState.password = null;
+            newState.user = null;
+            newState.redirectToReferrer = false;
+            return newState;
         default:
             return state;
     }

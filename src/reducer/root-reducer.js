@@ -1,5 +1,5 @@
-import {combineReducers} from 'redux';
-import {reducer as toastrReducer} from 'react-redux-toastr';
+import { combineReducers } from 'redux';
+import { reducer as toastrReducer } from 'react-redux-toastr';
 
 import appReducer from './app-reducer';
 

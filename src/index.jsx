@@ -9,4 +9,4 @@ import appStore from './service/app-store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
 
-ReactDOM.render( <Provider store={appStore}><BrowserRouter><App /></BrowserRouter></Provider>, document.getElementById( 'app' ) );
+ReactDOM.render(<Provider store={appStore}><BrowserRouter><App /></BrowserRouter></Provider>, document.getElementById('app'));

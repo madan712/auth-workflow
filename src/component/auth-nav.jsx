@@ -9,14 +9,14 @@ import * as appAction from '../action/app-action';
 import { isAuthenticated } from '../service/auth-service';
 
 class AuthNav extends React.Component {
-    constructor( props, context ) {
-        super( props, context );
-        this.logout = this.logout.bind( this );
+    constructor(props, context) {
+        super(props, context);
+        this.logout = this.logout.bind(this);
     }
 
     logout() {
         this.props.appAction.logout();
-        this.props.history.push( '/login' );
+        this.props.history.push('/login');
     }
 
     render() {
@@ -35,10 +35,10 @@ class AuthNav extends React.Component {
     }
 }
 
-function mapDispatchToProps( dispatch ) {
+function mapDispatchToProps(dispatch) {
     return {
-        appAction: bindActionCreators( appAction, dispatch )
+        appAction: bindActionCreators(appAction, dispatch)
     };
 }
 
-export default withRouter( connect( null, mapDispatchToProps )( AuthNav ) );
+export default withRouter(connect(null, mapDispatchToProps)(AuthNav));

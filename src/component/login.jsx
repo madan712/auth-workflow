@@ -7,25 +7,25 @@ import { Card, Form, Button } from 'react-bootstrap';
 import * as appAction from '../action/app-action';
 
 class Login extends React.Component {
-    constructor( props, context ) {
-        super( props, context );
-        this.login = this.login.bind( this );
-        this.updateCredentials = this.updateCredentials.bind( this );
+    constructor(props, context) {
+        super(props, context);
+        this.login = this.login.bind(this);
+        this.updateCredentials = this.updateCredentials.bind(this);
     }
 
-    login( event ) {
+    login(event) {
         event.preventDefault();
-        this.props.appAction.login( this.props.appReducer.userName, this.props.appReducer.password );
+        this.props.appAction.login(this.props.appReducer.userName, this.props.appReducer.password);
     }
 
-    updateCredentials( event ) {
-        this.props.appAction.updateCredentials( event.target.name, event.target.value );
+    updateCredentials(event) {
+        this.props.appAction.updateCredentials(event.target.name, event.target.value);
     }
 
     render() {
         const { from } = this.props.location.state || { from: { pathname: '/' } };
 
-        if ( this.props.appReducer.redirectToReferrer ) {
+        if (this.props.appReducer.redirectToReferrer) {
             return <Redirect to={from} />;
         }
 
@@ -57,16 +57,16 @@ class Login extends React.Component {
     }
 }
 
-function mapStateToProps( state ) {
+function mapStateToProps(state) {
     return {
         appReducer: state.appReducer
     };
 }
 
-function mapDispatchToProps( dispatch ) {
+function mapDispatchToProps(dispatch) {
     return {
-        appAction: bindActionCreators( appAction, dispatch )
+        appAction: bindActionCreators(appAction, dispatch)
     };
 }
 
-export default connect( mapStateToProps, mapDispatchToProps )( Login );
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
