@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
-import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import ReduxToastr from 'react-redux-toastr';
+import { Link } from 'react-router-dom';
 
 import Public from './public';
 import Private from './private';
@@ -18,8 +18,8 @@ class App extends React.Component {
 					<Container>
 						<Navbar.Collapse id="basic-navbar-nav">
 							<Nav className='mr-auto'>
-								<Nav.Link href="/public">Public Page</Nav.Link>
-								<Nav.Link href="/private">Private Page</Nav.Link>
+								<Link className='nav-link' to='/public'>Public Page</Link>
+								<Link className='nav-link' to='/private'>Private Page</Link>
 							</Nav>
 							<AuthNav />
 						</Navbar.Collapse>

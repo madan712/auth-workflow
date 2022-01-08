@@ -1,4 +1,4 @@
-import {toastr} from 'react-redux-toastr';
+import { toastr } from 'react-redux-toastr';
 
 import * as constant from '../constant/app-constant';
 import AppApi from '../api/app-api';
@@ -12,17 +12,15 @@ function loadUser(user) {
 }
 
 export function login(userName, password) {
-	console.log('login...'+userName);
-	return function(dispatch) {
-        return AppApi.login(userName, password).then(user => {
-        	localStorage.setItem('user',JSON.stringify(user));
-            dispatch(loadUser(user));
-            toastr.success('Success', 'Successfully logged in!');
-        }).catch(error => {
-            console.log(error);
-            toastr.error('Invalid', 'Invalid user!');
-        });
-    };
+	console.log('login...' + userName);
+	return (dispatch) => AppApi.login(userName, password).then(user => {
+		localStorage.setItem('user', JSON.stringify(user));
+		dispatch(loadUser(user));
+		toastr.success('Success', 'Successfully logged in!');
+	}).catch(error => {
+		console.log(error);
+		toastr.error('Invalid', 'Invalid user!');
+	});
 }
 
 export function logout() {

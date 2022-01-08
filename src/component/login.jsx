@@ -7,8 +7,8 @@ import { Card, Form, Button } from 'react-bootstrap';
 import * as appAction from '../action/app-action';
 
 class Login extends React.Component {
-	constructor(props, context) {
-		super(props, context);
+	constructor(props) {
+		super(props);
 		this.login = this.login.bind(this);
 		this.updateCredentials = this.updateCredentials.bind(this);
 	}

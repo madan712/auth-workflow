@@ -1,16 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import * as appAction from '../action/app-action';
 import { isAuthenticated } from '../service/auth-service';
 
 class AuthNav extends React.Component {
-	constructor(props, context) {
-		super(props, context);
+	constructor(props) {
+		super(props);
 		this.logout = this.logout.bind(this);
 	}
 
