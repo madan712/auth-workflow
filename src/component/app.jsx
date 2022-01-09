@@ -1,8 +1,7 @@
 import React from 'react';
-import { Route, Switch } from 'react-router';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import ReduxToastr from 'react-redux-toastr';
-import { Link } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 
 import Public from './public';
 import Private from './private';
@@ -25,12 +24,12 @@ class App extends React.Component {
 						</Navbar.Collapse>
 					</Container>
 				</Navbar>
-				<Route exact path='/' component={Public} />
-				<Route path='/public' component={Public} />
-				<Route path='/login' component={Login} />
-				<Switch>
-					<PrivateRoute path='/private' component={Private} />
-				</Switch>
+				<Routes>
+					<Route path='/' element={<Public />} />
+					<Route path='/public' element={<Public />} />
+					<Route path='/login' element={<Login />} />
+					<Route path='/private' element={<PrivateRoute><Private /></PrivateRoute>} />
+				</Routes>
 
 				<ReduxToastr
 					timeOut={4000}
