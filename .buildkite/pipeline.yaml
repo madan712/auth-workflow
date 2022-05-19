@@ -1,8 +1,5 @@
 steps:
  - label: ':package: Build'
    command:
-    - echo 'Installing..'
-    - yarn install
-    - echo 'Building..'
-    - yarn build
-    - echo 'Done..'
+    - echo 'Running deploy script'
+    - .buildkite/deploy.sh
