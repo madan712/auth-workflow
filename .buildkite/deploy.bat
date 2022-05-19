@@ -1,8 +1,4 @@
-#!/usr/bin/bash
-
-set -euo pipefail
-
-echo 'Inside deploy.sh'
+echo 'Inside deploy.bat'
 echo 'Installing..'
 yarn install
 echo 'Building...'

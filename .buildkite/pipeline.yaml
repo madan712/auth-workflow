@@ -2,4 +2,4 @@ steps:
  - label: ':package: Build'
    command:
     - echo 'Running deploy script'
-    - bash .buildkite/deploy.sh
+    - .buildkite/deploy.bat
