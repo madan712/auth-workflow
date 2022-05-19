@@ -1,6 +1,6 @@
 steps:
  - label: ':package: Build'
    command:
-    - echo 'Building'
+    - echo 'Building..'
     - yarn install
     - yarn build
